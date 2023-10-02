@@ -1,0 +1,15 @@
+class Solution(object):
+    def validPalindrome(self, s):
+        """
+        :type s: str
+        :rtype: bool
+        """
+        ch=0
+        st=list(s)
+        for i in range(len(st)):
+            char=st.pop(i)
+            if st[::]==st[::-1]:
+                ch=ch+1
+                return (ch>0)
+                break
+            st.insert(i,char)
