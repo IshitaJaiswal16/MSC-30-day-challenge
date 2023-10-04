@@ -1,0 +1,20 @@
+def ceil_floor(arr,x):
+    floor=[]
+    for i in arr:
+        if i<=x:
+            # print('floor= ',i)
+            floor.append(i)
+            # break
+    if floor==[]:
+        print("Floor does not exist in array")
+    else:
+        print('floor= ', floor[len(floor)-1])
+
+    ceil=None
+    for i in arr:
+        if i>=x:
+            print('ceil= ',i)
+            ceil=i
+            break
+    if ceil==None:
+        print("Ceil does not exist in array")
