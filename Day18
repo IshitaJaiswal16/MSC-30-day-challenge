@@ -1,0 +1,20 @@
+k=[1,2,3,7,5,6,4,8,9]
+f,s=0,0
+e=len(k)-1
+while e>s and e<len(k):
+    while s<e:
+        if k[e]>k[s]:
+           s=s+1
+        else:
+            temp=k[s]
+            k[s]=k[e]
+            k[e]=temp
+    e=e+1
+for i in range(len(k)-1):
+    if k[i]>k[i+1]:
+        f=1
+        break
+if f==1:
+    print("False")
+else:
+    print("True")
