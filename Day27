@@ -1,0 +1,20 @@
+class Solution:
+    def mctFromLeafValues(self, arr):
+        i = j = None
+        res = 0
+
+        while len(arr) > 1:
+            for x in range(1, len(arr)):
+                if i is None or arr[x] * arr[x - 1] < arr[j] * arr[i]:
+                    if arr[x] > arr[x - 1]:
+                        j = x
+                        i = x - 1
+                    else:
+                        i = x
+                        j = x - 1
+
+            res += arr[i] * arr[j]
+            arr.pop(i)
+            i = j = None
+
+        return res
